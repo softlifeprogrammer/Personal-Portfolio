@@ -1,22 +1,37 @@
 // script.js
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Smooth Scroll for Navigation Links
   const navLinks = document.querySelectorAll(".nav-link");
+  const navBar = document.getElementById("nav-bar");
+  const toggleButton = document.createElement("button");
+
+  toggleButton.innerText = "Menu";
+  toggleButton.classList.add("menu-toggle");
+  navBar.parentElement.insertBefore(toggleButton, navBar);
+
+  toggleButton.addEventListener("click", () => {
+    navBar.classList.toggle("open");
+    toggleButton.innerText = navBar.classList.contains("open") ? "Close" : "Menu";
+  });
 
   navLinks.forEach(link => {
     link.addEventListener("click", (e) => {
-      e.preventDefault(); // Prevent default anchor click behavior
-      const targetId = link.getAttribute("href").substring(1); // Get the target ID
+      e.preventDefault();
+      const targetId = link.getAttribute("href").substring(1);
       const targetSection = document.getElementById(targetId);
 
-      // Smooth scroll to the target section
       targetSection.scrollIntoView({
         behavior: "smooth",
         block: "start"
       });
+
+      if (navBar.classList.contains("open")) {
+        navBar.classList.remove("open"); // Close the menu after clicking a link
+        toggleButton.innerText = "Menu"; // Reset button text
+      }
     });
   });
+});
 
   // Toggle Mobile Menu
   const navBar = document.getElementById("nav-bar");
