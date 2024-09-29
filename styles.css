@@ -449,26 +449,41 @@ footer i {
   }
 }
 
-.menu-toggle {
-  display: none; /* Initially hidden */
-  padding: 10px;
-  background-color: #444;
-  color: #fff;
-  border: none;
-  cursor: pointer;
+#nav-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  transition: max-height 0.3s ease;
+  overflow: hidden; /* Hide overflow */
 }
 
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block; /* Show button on small screens */
-  }
+#nav-bar.open {
+  display: flex;
+  flex-direction: column; /* Stack links */
+  max-height: 300px; /* Adjust as needed */
+}
 
+.menu-toggle {
+  display: none; /* Hidden by default */
+}
+
+/* Show toggle button on smaller screens */
+@media (max-width: 768px) {
   #nav-bar {
-    display: none; /* Hide nav-bar by default */
-    flex-direction: column; /* Stack items */
+    display: none; /* Hide nav links */
   }
 
   #nav-bar.open {
-    display: flex; /* Show nav-bar when open */
+    display: flex; /* Show links when open */
+  }
+
+  .menu-toggle {
+    display: block; /* Show toggle button */
+    background-color: #007BFF; /* Button styles */
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
   }
 }
+
