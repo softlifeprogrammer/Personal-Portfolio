@@ -448,3 +448,27 @@ footer i {
     text-align: center;
   }
 }
+
+.menu-toggle {
+  display: none; /* Initially hidden */
+  padding: 10px;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* Show button on small screens */
+  }
+
+  #nav-bar {
+    display: none; /* Hide nav-bar by default */
+    flex-direction: column; /* Stack items */
+  }
+
+  #nav-bar.open {
+    display: flex; /* Show nav-bar when open */
+  }
+}
