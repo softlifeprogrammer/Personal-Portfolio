@@ -30,19 +30,14 @@
     <!-- START NAV -->
 
     <nav id="navbar" class="nav">
-      <ul class="nav-list">
-        <li>
-          <a href="#welcome-section">About</a>
-        </li>
-        <li>
-          <a href="#services">Services</a>
-        </li>
-        <li>
-          <a href="#projects">Projects</a>
-        </li>
-        <li>
-          <a href="#contact">Contact</a>
-        </li>
+      <button id="toggle-button" class="menu-toggle" aria-expanded="false">
+        Menu
+      </button>
+      <ul id="nav-bar" class="nav-list">
+        <li><a href="#welcome-section" class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
     </nav>
 
@@ -72,38 +67,39 @@
     <section id="services" class="services">
       <h2>Our Services</h2>
       <div class="service-cards">
-        <div class="service-card">
+        <div class="service-card service1">
           <h3>Web Development</h3>
           <p>
-            Custom websites tailored to your needs using modern technologies.
+            Custom websites tailored to your needs using modern web
+            technologies.
           </p>
           <a href="#contact" class="cta-button">Get Started</a>
         </div>
-        <div class="service-card">
+        <div class="service-card service2">
           <h3>eCommerce Solutions</h3>
           <p>
             Robust online stores that drive sales and enhance user experience.
           </p>
           <a href="#contact" class="cta-button">Shop Now</a>
         </div>
-        <div class="service-card">
+        <div class="service-card service3">
           <h3>SEO Optimization</h3>
           <p>Boost your visibility and rank higher on search engines.</p>
           <a href="#contact" class="cta-button">Learn More</a>
         </div>
-        <div class="service-card">
+        <div class="service-card service4">
           <h3>Responsive Design</h3>
           <p>Create websites that look great on all devices.</p>
           <a href="#contact" class="cta-button">Get Started</a>
         </div>
-        <div class="service-card">
+        <div class="service-card service5">
           <h3>Content Management Systems</h3>
           <p>
             Manage your website content effortlessly with popular CMS platforms.
           </p>
           <a href="#contact" class="cta-button">Learn More</a>
         </div>
-        <div class="service-card">
+        <div class="service-card service6">
           <h3>Website Maintenance</h3>
           <p>
             Regular updates and maintenance to keep your site running smoothly.
@@ -302,38 +298,41 @@
 
     <footer class="contact-section">
       <div>
-        <h2>Let’s Build Something Amazing Together!</h2>
+        <h3>Let’s Build Something Amazing Together!</h3>
         <a href="#contact" class="cta-button">Contact Me</a>
       </div>
 
       <!-- START SOCIAL ICONS -->
       <div class="social-icons">
-    <h3>Follow Us</h3>
-    <div class="social-icons-container">
-      <a href="https://www.facebook.com/freecodecamp/">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="https://twitter.com/freecodecamp/">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="https://instagram.com/freecodecamp">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.linkedin.com/school/free-code-camp/">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      <a href="https://www.youtube.com/freecodecamp">
-        <i class="fab fa-youtube"></i>
-      </a>
-    </div>
-  </div>
+        <h3>Follow Us</h3>
+        <div class="social-icons-container">
+          <a href="https://www.facebook.com/freecodecamp/">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://twitter.com/freecodecamp/">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://instagram.com/freecodecamp">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com/school/free-code-camp/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://www.youtube.com/freecodecamp">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
       <!-- END SOCIAL ICONS -->
-  <p>&copy; <span id="current-year"></span> <a href="https://github.com/softlifeprogrammer/" target="_blank">Softlifeprogrammer</a>. All rights reserved.</p>
-
+      <p>
+        &copy;<span id="current-year"></span>
+        <a href="https://github.com/softlifeprogrammer/" target="_blank"
+          >Softlifeprogrammer</a
+        >.All rights reserved.
+      </p>
     </footer>
 
     <!-- END FOOTER SECTION -->
     <script src="script.js"></script>
-
   </body>
 </html>
