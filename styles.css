@@ -83,7 +83,8 @@ img {
 /* Navigation */
 .nav {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
   top: 0;
   left: 0;
@@ -91,21 +92,85 @@ img {
   background: var(--main-accent);
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
   z-index: 1000;
+  padding: 1rem 2rem;
 }
 
 .nav-list {
   display: flex;
   margin-right: 2rem;
+  flex-wrap: wrap;
 }
 
 .nav-list a {
   display: block;
   font-size: 2.2rem;
-  padding: 2rem;
+  padding: 1rem 2rem;
+  text-align: center;
 }
 
 .nav-list a:hover {
   background: var(--main-dark-accent);
+}
+
+/* Responsive Nav for smaller screens */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start;
+    padding: 1rem; /* Adjust padding for smaller screens */
+  }
+
+  .nav-list {
+    flex-direction: column; /* Stack nav items vertically */
+    width: 100%; /* Full width for the nav list */
+  }
+
+  .nav-list a {
+    padding: 1rem; /* Reduce padding for smaller screens */
+  }
+
+  .menu-toggle {
+    display: block; /* Show the toggle button for small screens */
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+  }
+}
+
+/* Toggle button hidden by default */
+.menu-toggle {
+  display: none;
+  background-color: var(--main-accent);
+  color: white;
+  border: none;
+  font-size: 3rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
+/* Show the toggle button on smaller screens */
+@media (max-width: 768px) {
+  .nav-list {
+    display: none; /* Hide nav links by default */
+    flex-direction: column;
+    width: 100%; /* Full width of the screen */
+    background: var(--main-accent);
+    position: absolute;
+    top: 100%; /* Place below the navbar */
+    left: 0;
+  }
+
+  .nav-list.open {
+    display: flex; /* Show the nav links when open */
+  }
+
+  .menu-toggle {
+    display: block; /* Show the toggle button */
+  }
 }
 
 /* Welcome section */
@@ -157,7 +222,7 @@ img {
   height: 100vh;
   width: 100vw;
   object-fit: cover;
-  filter: brightness(1.0);
+  filter: brightness(1.5);
 }
 
 .overlay {
@@ -177,7 +242,7 @@ img {
 }
 
 .overlay > p {
-  color: #4d2222;
+  color: var(--main-accent);
   font-size: 2.5rem;
   margin: 20px;
 }
@@ -217,12 +282,13 @@ img {
   background: var(--main-light-gray);
 }
 
+/* General styling for service cards */
 .services {
   padding: 10rem 2rem;
 }
 .service-cards, p {
   display: flex;
-  color: #000;
+  color: white;
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
@@ -230,15 +296,44 @@ img {
 
 .service-card {
   background: #f9f9f9;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
   width: 300px;
-  transition: transform 0.3s;
+  box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out;
 }
 
 .service-card:hover {
   transform: scale(1.05);
+}
+
+/* Specific background images for each service */
+.service1 {
+  background-image: url('https://thirdessential.com/wp-content/uploads/2022/02/Website-Development-Designing.png');
+}
+
+.service2 {
+  background-image: url('https://itinfonity.com/wp-content/uploads/2020/10/Ecommerce-Website-Development-1024x1024.png');
+}
+
+.service3 {
+  background-image: url('http://ranktech.co.in/wp-content/uploads/2018/01/Website-Design-SEO-Friendy.jpg');
+}
+
+.service4 {
+  background-image: url('https://www.nirmal.com.au/wp-content/uploads/2015/12/responsive-web-design.jpg');
+}
+
+.service5 {
+  background-image: url('https://iexperto.io/wp-content/uploads/2020/08/Content-management-systems-CMS.jpg');
+}
+
+.service6 {
+  background-image: url('https://static.vecteezy.com/system/resources/previews/003/486/052/original/website-maintenance-update-system-development-website-vector.jpg');
 }
 
 .cta-button {
@@ -420,30 +515,69 @@ button.cta-button:hover {
 footer {
   font-weight: 300;
   display: flex;
+  flex-wrap: wrap;
   padding: 1rem;
   background: var(--main-light-gray);
   border-top: 4px solid var(--main-accent);
-  justify-content: space-evenly;
-  align-items: center;
-  background: #007BFF;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
   color: black;
-  padding: 20px;
+  padding: 2rem;
   text-align: center;
+  min-height: 150px;
 }
 
 footer > h2 {
   margin: 0;
+  font-size: 2rem; /* Adjust font size */
 }
 
 footer i {
+  margin-left: 1rem;
+  font-size: 2.5rem; /* Adjust icon size */
   vertical-align: middle;
 }
 
-@media (max-width: 20rem) {
+footer > p {
+  position: absolute;
+  color: black;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+/* Footer for smaller screens */
+@media (max-width: 768px) {
   footer {
-    flex-direction: column-reverse;
-    text-align: center;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;    /* Center the items */
+    text-align: center;     /* Center text */
+    padding: 4rem 2rem;     /* Add extra padding for breathing room */
   }
+
+  footer > h2 {
+    margin-bottom: 1.5rem; /* Add space between title and content */
+    font-size: 2.2rem; /* Slightly larger text for clarity */
+  }
+
+  footer p {
+    margin-bottom: 1.5rem; /* Add space between stacked text */
+    font-size: 1.6rem; /* Maintain readable text size */
+    max-width: 90%; /* Restrict text width for better readability */
+  }
+
+  footer i {
+    margin-bottom: 1.5rem; /* Add space between icons and text */
+    font-size: 2rem; /* Adjust icon size for smaller screens */
+  }
+}
+
+/* Add spacing between stacked elements for readability */
+footer > *:not(:last-child) {
+  margin-bottom: 2rem; /* Add space between each item */
 }
 
 #nav-bar {
@@ -483,4 +617,3 @@ footer i {
     cursor: pointer;
   }
 }
-
