@@ -282,6 +282,30 @@ img {
   background: var(--main-light-gray);
 }
 
+/*Styling for About Me Section*/
+.about-me-section {
+  padding: 4rem 2rem;
+  background-color: var(--main-white);
+  text-align: center;
+}
+
+.about-me-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-me-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-me-section p {
+  font-size: 2.0rem;
+  color: black;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
 /* General styling for service cards */
 .services {
   padding: 10rem 2rem;
@@ -513,40 +537,38 @@ button.cta-button:hover {
 
 /* Footer */
 footer {
-  font-weight: 300;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 1rem;
-  background: var(--main-light-gray);
-  border-top: 4px solid var(--main-accent);
-  justify-content: center;
-  align-items: flex-start;
   position: relative;
-  color: black;
+  background: var(--main-accent);
   padding: 2rem;
   text-align: center;
-  min-height: 150px;
-}
-
-footer > h2 {
-  margin: 0;
-  font-size: 2rem; /* Adjust font size */
-}
-
-footer i {
-  margin-left: 1rem;
-  font-size: 2.5rem; /* Adjust icon size */
-  vertical-align: middle;
+  color: black;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 footer > p {
   position: absolute;
-  color: black;
-  bottom: 10px;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 1.6rem;
   margin: 0;
+  padding: 1rem 0;
+  font-size: 1.6rem;
+  width: 100%;
+  text-align: center;
+  background-color: var(--main-accent);
+}
+
+footer .social-icons-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+footer .cta-button {
+  margin-top: 1rem;
 }
 
 /* Footer for smaller screens */
